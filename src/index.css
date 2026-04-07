@@ -1,0 +1,78 @@
+@import 'react-grid-layout/css/styles.css';
+@import 'react-resizable/css/styles.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #05070A;
+    color: #E2E8F0;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #1E293B transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #1E293B;
+    border-radius: 2px;
+  }
+
+  .rounded-panel {
+    border-radius: 16px;
+  }
+}
+
+/* react-resizable handle override - make it more subtle */
+.react-resizable-handle {
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.react-resizable:hover .react-resizable-handle {
+  opacity: 1;
+}
+
+.react-resizable-handle-se {
+  bottom: 4px !important;
+  right: 4px !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-image: none !important;
+  border-right: 2px solid #1E293B;
+  border-bottom: 2px solid #1E293B;
+  border-radius: 0 0 6px 0;
+  cursor: se-resize;
+}
+
+/* Grid item - ensure full height */
+.react-grid-item {
+  overflow: hidden;
+}
+
+.react-grid-item > div {
+  height: 100%;
+}
