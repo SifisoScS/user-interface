@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Zap, TrendingDown, TrendingUp } from 'lucide-react'
 
-const ACCENT = '#A78BFA'
+const ACCENT = '#14B8A6'
 
 const CONSUMERS = [
   { name: 'HVAC',    watts: 2400, color: '#F59E0B' },
   { name: 'Washer',  watts: 1100, color: '#3B82F6' },
   { name: 'Fridge',  watts: 180,  color: '#22C55E' },
-  { name: 'Lights',  watts: 54,   color: '#A78BFA' },
+  { name: 'Lights',  watts: 54,   color: '#14B8A6' },
   { name: 'Other',   watts: 320,  color: '#475569' },
 ]
 
@@ -36,7 +36,7 @@ export function EnergyMonitor() {
       {/* Current consumption */}
       <div
         className="p-3 rounded-xl"
-        style={{ backgroundColor: '#0A1525', border: '1px solid #1E293B' }}
+        style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
       >
         <div className="flex items-end justify-between mb-2">
           <div>
@@ -56,12 +56,12 @@ export function EnergyMonitor() {
         </div>
 
         {/* Gauge bar */}
-        <div className="rounded-full overflow-hidden" style={{ height: '6px', backgroundColor: '#1E293B' }}>
+        <div className="rounded-full overflow-hidden" style={{ height: '6px', backgroundColor: '#334155' }}>
           <div
             className="h-full rounded-full transition-all duration-1000"
             style={{
               width: `${pct}%`,
-              background: `linear-gradient(to right, #22C55E, #A78BFA)`,
+              background: `linear-gradient(to right, #14B8A6, #2563EB)`,
             }}
           />
         </div>
@@ -78,7 +78,7 @@ export function EnergyMonitor() {
             <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: c.color }} />
             <span className="text-xs flex-1" style={{ color: '#94A3B8' }}>{c.name}</span>
             <span className="text-xs font-medium" style={{ color: '#E2E8F0' }}>{c.watts}W</span>
-            <div className="w-20 rounded-full overflow-hidden" style={{ height: '4px', backgroundColor: '#1E293B' }}>
+            <div className="w-20 rounded-full overflow-hidden" style={{ height: '4px', backgroundColor: '#334155' }}>
               <div
                 className="h-full rounded-full"
                 style={{ width: `${(c.watts / TOTAL_WATTS) * 100}%`, backgroundColor: c.color }}

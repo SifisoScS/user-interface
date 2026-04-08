@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX } from 'lucide-react'
 import { mockPlaylist } from '../../data'
 
-const ACCENT = '#A78BFA'
+const ACCENT = '#2563EB'
 
 export function MusicPlayer() {
   const [trackIdx, setTrackIdx] = useState(0)
@@ -41,7 +41,7 @@ export function MusicPlayer() {
   return (
     <div
       className="flex items-center gap-4 px-5 shrink-0 border-t"
-      style={{ height: '60px', backgroundColor: '#07101E', borderColor: '#1E293B' }}
+      style={{ height: '60px', backgroundColor: '#0F172A', borderColor: '#334155' }}
     >
       {/* Album art */}
       <div
@@ -79,7 +79,7 @@ export function MusicPlayer() {
         <span style={{ color: '#475569', fontSize: '10px', width: '28px', textAlign: 'right' }}>{fmt(progress)}</span>
         <div
           className="flex-1 relative rounded-full overflow-hidden cursor-pointer"
-          style={{ height: '4px', backgroundColor: '#1E293B' }}
+          style={{ height: '4px', backgroundColor: '#334155' }}
           onClick={e => {
             const rect = e.currentTarget.getBoundingClientRect()
             const ratio = (e.clientX - rect.left) / rect.width

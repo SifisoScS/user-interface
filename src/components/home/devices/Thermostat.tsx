@@ -1,12 +1,12 @@
 import { Flame, Wind, RefreshCw, Power } from 'lucide-react'
 import type { ThermostatState, ThermostatMode } from '../../../data/mockIoT'
 
-const ACCENT = '#A78BFA'
+const ACCENT = '#2563EB'
 
 const MODE_CONFIG: Record<ThermostatMode, { icon: React.ReactNode; label: string; color: string }> = {
   heat: { icon: <Flame size={12} />,      label: 'Heat', color: '#F59E0B' },
   cool: { icon: <Wind size={12} />,       label: 'Cool', color: '#93C5FD' },
-  auto: { icon: <RefreshCw size={12} />,  label: 'Auto', color: '#A78BFA' },
+  auto: { icon: <RefreshCw size={12} />,  label: 'Auto', color: '#2563EB' },
   off:  { icon: <Power size={12} />,      label: 'Off',  color: '#475569' },
 }
 
@@ -21,7 +21,7 @@ export function ThermostatPanel({ state, onChange }: Props) {
   const diff = state.targetTemp - state.currentTemp
 
   return (
-    <div className="p-4 rounded-2xl space-y-4" style={{ backgroundColor: '#0A1525', border: '1px solid #1E293B' }}>
+    <div className="p-4 rounded-2xl space-y-4" style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}>
       {/* Current / Target */}
       <div className="flex items-end justify-between">
         <div>
@@ -36,7 +36,7 @@ export function ThermostatPanel({ state, onChange }: Props) {
             <button
               onClick={() => onChange({ ...state, targetTemp: state.targetTemp - 1 })}
               className="w-7 h-7 rounded-lg flex items-center justify-center text-lg font-bold transition-colors hover:bg-white/10"
-              style={{ color: '#64748B', backgroundColor: '#1E293B' }}
+              style={{ color: '#64748B', backgroundColor: '#334155' }}
             >−</button>
             <span className="font-semibold text-xl w-10 text-center" style={{ color: ACCENT }}>
               {state.targetTemp}°
@@ -44,7 +44,7 @@ export function ThermostatPanel({ state, onChange }: Props) {
             <button
               onClick={() => onChange({ ...state, targetTemp: state.targetTemp + 1 })}
               className="w-7 h-7 rounded-lg flex items-center justify-center text-lg font-bold transition-colors hover:bg-white/10"
-              style={{ color: '#64748B', backgroundColor: '#1E293B' }}
+              style={{ color: '#64748B', backgroundColor: '#334155' }}
             >+</button>
           </div>
         </div>
@@ -72,7 +72,7 @@ export function ThermostatPanel({ state, onChange }: Props) {
             onClick={() => onChange({ ...state, mode })}
             className="flex flex-col items-center gap-1 py-2 rounded-xl transition-all"
             style={{
-              backgroundColor: state.mode === mode ? `${cfg.color}20` : '#1E293B',
+              backgroundColor: state.mode === mode ? `${cfg.color}20` : '#334155',
               color: state.mode === mode ? cfg.color : '#475569',
               border: `1px solid ${state.mode === mode ? cfg.color + '50' : 'transparent'}`,
             }}

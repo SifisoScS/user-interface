@@ -11,9 +11,9 @@ const ModeContext = createContext<ModeContextValue | null>(null)
 function getInitialMode(): Mode {
   try {
     const saved = localStorage.getItem('forge-os-mode')
-    if (saved === 'dev' || saved === 'office' || saved === 'home') return saved
+    if (saved === 'office' || saved === 'home') return saved
   } catch { /* ignore */ }
-  return 'dev'
+  return 'home'
 }
 
 export function ModeProvider({ children }: { children: React.ReactNode }) {

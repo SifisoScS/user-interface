@@ -7,18 +7,18 @@ const ACCENT = '#A78BFA'
 
 const ALERT_ICONS: Record<AlertType, React.ReactNode> = {
   motion:  <AlertTriangle size={12} style={{ color: '#F59E0B' }} />,
-  climate: <Thermometer  size={12} style={{ color: '#3B82F6' }} />,
+  climate: <Thermometer  size={12} style={{ color: '#14B8A6' }} />,
   battery: <BatteryLow   size={12} style={{ color: '#EF4444' }} />,
   lock:    <Lock         size={12} style={{ color: '#22C55E' }} />,
-  info:    <Bell         size={12} style={{ color: '#A78BFA' }} />,
+  info:    <Bell         size={12} style={{ color: '#2563EB' }} />,
 }
 
 const ALERT_COLORS: Record<AlertType, string> = {
   motion:  '#F59E0B',
-  climate: '#3B82F6',
+  climate: '#14B8A6',
   battery: '#EF4444',
   lock:    '#22C55E',
-  info:    '#A78BFA',
+  info:    '#2563EB',
 }
 
 interface Props {

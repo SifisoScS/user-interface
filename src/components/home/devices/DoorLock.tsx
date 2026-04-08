@@ -1,8 +1,6 @@
 import { Lock, Unlock, Clock, User } from 'lucide-react'
 import type { DoorLock as DoorLockType } from '../../../data/mockIoT'
 
-const ACCENT = '#A78BFA'
-
 interface Props {
   locks: DoorLockType[]
   onChange: (updated: DoorLockType) => void
@@ -25,16 +23,16 @@ export function DoorLockPanel({ locks, onChange }: Props) {
           key={lock.id}
           className="p-3 rounded-xl flex items-center justify-between gap-3"
           style={{
-            backgroundColor: '#0A1525',
-            border: `1px solid ${lock.locked ? '#22C55E30' : '#EF444430'}`,
+            backgroundColor: '#1E293B',
+            border: `1px solid ${lock.locked ? '#14B8A630' : '#F59E0B30'}`,
           }}
         >
           <div className="flex items-center gap-3">
             <div
               className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
               style={{
-                backgroundColor: lock.locked ? '#22C55E18' : '#EF444418',
-                color: lock.locked ? '#22C55E' : '#EF4444',
+                backgroundColor: lock.locked ? '#14B8A618' : '#F59E0B18',
+                color: lock.locked ? '#14B8A6' : '#F59E0B',
               }}
             >
               {lock.locked ? <Lock size={16} /> : <Unlock size={16} />}
@@ -52,9 +50,9 @@ export function DoorLockPanel({ locks, onChange }: Props) {
             onClick={() => toggle(lock)}
             className="px-3 py-1.5 rounded-xl text-xs font-medium transition-all shrink-0"
             style={{
-              backgroundColor: lock.locked ? '#EF444415' : '#22C55E15',
-              color: lock.locked ? '#EF4444' : '#22C55E',
-              border: `1px solid ${lock.locked ? '#EF444430' : '#22C55E30'}`,
+              backgroundColor: lock.locked ? '#F59E0B15' : '#14B8A615',
+              color: lock.locked ? '#F59E0B' : '#14B8A6',
+              border: `1px solid ${lock.locked ? '#F59E0B30' : '#14B8A630'}`,
             }}
           >
             {lock.locked ? 'Unlock' : 'Lock'}

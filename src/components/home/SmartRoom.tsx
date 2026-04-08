@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp, Lightbulb, Thermometer, Lock } from 'lucide-rea
 import { SmartLightPanel } from './devices/SmartLight'
 import type { IoTState, SmartLight } from '../../data/mockIoT'
 
-const ACCENT = '#A78BFA'
+const ACCENT = '#14B8A6'
 
 const ROOM_ICONS: Record<string, string> = {
   'Living Room': '🛋️',
@@ -27,7 +27,7 @@ export function SmartRoom({ room, iotState, onLightChange }: Props) {
   return (
     <div
       className="rounded-2xl overflow-hidden transition-all"
-      style={{ backgroundColor: '#0A1525', border: `1px solid ${expanded ? ACCENT + '40' : '#1E293B'}` }}
+      style={{ backgroundColor: '#1E293B', border: `1px solid ${expanded ? ACCENT + '40' : '#334155'}` }}
     >
       {/* Header */}
       <button
@@ -64,7 +64,7 @@ export function SmartRoom({ room, iotState, onLightChange }: Props) {
 
       {/* Expanded device list */}
       {expanded && (
-        <div className="px-4 pb-4 border-t" style={{ borderColor: '#1E293B' }}>
+        <div className="px-4 pb-4 border-t" style={{ borderColor: '#334155' }}>
           <div className="pt-3">
             <div className="text-xs font-semibold mb-2" style={{ color: '#475569' }}>Lights</div>
             <SmartLightPanel lights={lights} onChange={onLightChange} />

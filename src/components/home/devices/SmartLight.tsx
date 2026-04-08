@@ -1,7 +1,7 @@
 import { Lightbulb } from 'lucide-react'
 import type { SmartLight as SmartLightType, LightTemp } from '../../../data/mockIoT'
 
-const ACCENT = '#A78BFA'
+const ACCENT = '#14B8A6'
 
 const TEMP_COLORS: Record<LightTemp, string> = {
   warm:    '#F59E0B',
@@ -21,7 +21,7 @@ export function SmartLightPanel({ lights, onChange }: Props) {
         <div
           key={light.id}
           className="p-3 rounded-xl"
-          style={{ backgroundColor: '#0A1525', border: '1px solid #1E293B' }}
+          style={{ backgroundColor: '#1E293B', border: '1px solid #334155' }}
         >
           {/* Row 1: name + toggle */}
           <div className="flex items-center justify-between mb-2">
@@ -66,7 +66,7 @@ export function SmartLightPanel({ lights, onChange }: Props) {
                     style={{
                       backgroundColor: light.temperature === t ? `${TEMP_COLORS[t]}25` : 'transparent',
                       color: light.temperature === t ? TEMP_COLORS[t] : '#334155',
-                      border: `1px solid ${light.temperature === t ? TEMP_COLORS[t] + '50' : '#1E293B'}`,
+                      border: `1px solid ${light.temperature === t ? TEMP_COLORS[t] + '50' : '#334155'}`,
                       fontSize: '10px',
                     }}
                   >
@@ -90,7 +90,7 @@ function ToggleSwitch({ on, onChange, accent }: { on: boolean; onChange: (v: boo
       style={{
         width: '32px',
         height: '18px',
-        backgroundColor: on ? accent : '#1E293B',
+        backgroundColor: on ? accent : '#334155',
         border: `1px solid ${on ? accent + '80' : '#334155'}`,
       }}
     >

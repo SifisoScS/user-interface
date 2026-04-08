@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Settings, Home } from 'lucide-react'
 import { AlertsBadge } from './HomeAlerts'
 
-const ACCENT = '#A78BFA'
+const ACCENT = '#14B8A6'
 
 interface Props {
   alertCount: number
@@ -22,7 +22,7 @@ export function StatusBar({ alertCount }: Props) {
   return (
     <div
       className="flex items-center gap-4 px-5 shrink-0 border-b"
-      style={{ height: '44px', backgroundColor: '#07101E', borderColor: '#1E293B' }}
+      style={{ height: '44px', backgroundColor: '#0F172A', borderColor: '#334155' }}
     >
       {/* Date & time */}
       <div className="flex items-center gap-3 text-xs">
@@ -31,7 +31,7 @@ export function StatusBar({ alertCount }: Props) {
       </div>
 
       {/* Separator */}
-      <div className="w-px h-4" style={{ backgroundColor: '#1E293B' }} />
+      <div className="w-px h-4" style={{ backgroundColor: '#334155' }} />
 
       {/* Weather */}
       <div className="flex items-center gap-1.5 text-xs" style={{ color: '#64748B' }}>

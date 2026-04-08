@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { Header } from '../components/layout/Header'
-import { DevWorkspace } from '../components/dev/DevWorkspace'
 import { OfficeWorkspace } from '../components/office/OfficeWorkspace'
 import { HomeWorkspace } from '../components/home/HomeWorkspace'
 import { useModeContext } from '../context/ModeContext'
@@ -21,11 +20,6 @@ export function Index() {
 
       <div className="flex-1 overflow-hidden relative">
         <AnimatePresence mode="wait" initial={false}>
-          {mode === 'dev' && (
-            <motion.div key="dev" className="absolute inset-0" {...FADE}>
-              <DevWorkspace />
-            </motion.div>
-          )}
           {mode === 'office' && (
             <motion.div key="office" className="absolute inset-0" {...FADE}>
               <OfficeWorkspace />

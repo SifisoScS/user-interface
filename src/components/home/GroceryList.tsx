@@ -3,7 +3,7 @@ import { Plus, X, ShoppingCart } from 'lucide-react'
 import { defaultGroceryItems } from '../../data'
 import type { GroceryItem, GroceryCategory } from '../../data/mockGrocery'
 
-const ACCENT = '#A78BFA'
+const ACCENT = '#2563EB'
 
 const CATEGORY_COLORS: Record<GroceryCategory, string> = {
   Produce:   '#22C55E',
@@ -11,7 +11,7 @@ const CATEGORY_COLORS: Record<GroceryCategory, string> = {
   Pantry:    '#F59E0B',
   Meat:      '#EF4444',
   Frozen:    '#93C5FD',
-  Beverages: '#A78BFA',
+  Beverages: '#2563EB',
   Household: '#64748B',
 }
 
@@ -59,7 +59,7 @@ export function GroceryList() {
           onKeyDown={e => e.key === 'Enter' && add()}
           placeholder="Add item…"
           className="flex-1 px-2.5 py-1.5 rounded-lg text-xs outline-none"
-          style={{ backgroundColor: '#0A1525', color: '#E2E8F0', border: '1px solid #1E293B' }}
+          style={{ backgroundColor: '#1E293B', color: '#E2E8F0', border: '1px solid #334155' }}
         />
         <button
           onClick={add}
@@ -100,8 +100,8 @@ function GroceryRow({ item, onToggle, onRemove }: { item: GroceryItem; onToggle:
         onClick={() => onToggle(item.id)}
         className="w-4 h-4 rounded flex items-center justify-center shrink-0 transition-colors"
         style={{
-          backgroundColor: item.checked ? '#A78BFA' : 'transparent',
-          border: `1.5px solid ${item.checked ? '#A78BFA' : '#334155'}`,
+          backgroundColor: item.checked ? '#2563EB' : 'transparent',
+          border: `1.5px solid ${item.checked ? '#2563EB' : '#334155'}`,
         }}
       >
         {item.checked && <span style={{ color: '#fff', fontSize: '9px', lineHeight: 1 }}>✓</span>}

@@ -70,28 +70,6 @@ export function PanelGrid({ mode }: Props) {
         isResizable
         isDraggable
       >
-        {mode === 'dev' && (
-          <>
-            <div key="terminal">
-              <Suspense fallback={<WidgetFallback />}><Terminal /></Suspense>
-            </div>
-            <div key="code-editor">
-              <Suspense fallback={<WidgetFallback />}><CodeEditor /></Suspense>
-            </div>
-            <div key="git-status">
-              <Suspense fallback={<WidgetFallback />}><GitStatus /></Suspense>
-            </div>
-            <div key="api-tester">
-              <Suspense fallback={<WidgetFallback />}><ApiTester /></Suspense>
-            </div>
-            <div key="dev-tasks">
-              <Suspense fallback={<WidgetFallback />}><DevTasks /></Suspense>
-            </div>
-            <div key="browser-preview-dev">
-              <Suspense fallback={<WidgetFallback />}><BrowserPreviewDev widgetId="browser-preview-dev" /></Suspense>
-            </div>
-          </>
-        )}
         {mode === 'office' && (
           <>
             <div key="email-inbox">

@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion'
-import { Terminal, Briefcase, Home } from 'lucide-react'
+import { Briefcase, Home } from 'lucide-react'
 import { useModeContext } from '../../context/ModeContext'
 import type { LucideIcon } from 'lucide-react'
 import type { Mode } from '../../types'
 
 const MODES: { id: Mode; label: string; icon: LucideIcon; color: string }[] = [
-  { id: 'dev',    label: 'Dev',    icon: Terminal,  color: '#22C55E' },
   { id: 'office', label: 'Office', icon: Briefcase, color: '#3B82F6' },
   { id: 'home',   label: 'Home',   icon: Home,      color: '#A78BFA' },
 ]

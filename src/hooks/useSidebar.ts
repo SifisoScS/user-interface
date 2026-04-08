@@ -8,12 +8,12 @@ import type { WidgetConfig, Mode } from '../types'
 
 const ALL_WIDGETS: WidgetConfig[] = [
   // Dev
-  { id: 'terminal',            label: 'Terminal',       icon: Terminal,       modes: ['dev'] },
-  { id: 'code-editor',         label: 'Code Editor',    icon: Code2,          modes: ['dev'] },
-  { id: 'git-status',          label: 'Git Status',     icon: GitBranch,      modes: ['dev'] },
-  { id: 'api-tester',          label: 'API Tester',     icon: Zap,            modes: ['dev'] },
-  { id: 'dev-tasks',           label: 'Tasks',          icon: CheckSquare,    modes: ['dev'] },
-  { id: 'browser-preview-dev', label: 'Browser',        icon: Globe,          modes: ['dev'] },
+  { id: 'terminal',            label: 'Terminal',       icon: Terminal,       modes: ['office'] },
+  { id: 'code-editor',         label: 'Code Editor',    icon: Code2,          modes: ['office'] },
+  { id: 'git-status',          label: 'Git Status',     icon: GitBranch,      modes: ['office'] },
+  { id: 'api-tester',          label: 'API Tester',     icon: Zap,            modes: ['office'] },
+  { id: 'dev-tasks',           label: 'Tasks',          icon: CheckSquare,    modes: ['office'] },
+  { id: 'browser-preview-dev', label: 'Browser',        icon: Globe,          modes: ['office'] },
   // Office
   { id: 'email-inbox',         label: 'Email',          icon: Mail,           modes: ['office'] },
   { id: 'team-chat',           label: 'Team Chat',      icon: MessageSquare,  modes: ['office'] },

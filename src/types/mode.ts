@@ -1,1 +1,1 @@
-export type Mode = 'dev' | 'office' | 'home'
+export type Mode = 'office' | 'home'

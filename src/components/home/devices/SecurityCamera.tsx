@@ -38,13 +38,13 @@ function CameraFeed({ camera }: { camera: SecurityCameraType }) {
       const scanY = ((frame * 2) % (h + 20)) - 10
       const grad = ctx.createLinearGradient(0, scanY - 6, 0, scanY + 6)
       grad.addColorStop(0, 'transparent')
-      grad.addColorStop(0.5, 'rgba(167, 139, 250, 0.15)')
+      grad.addColorStop(0.5, 'rgba(20, 184, 166, 0.15)')
       grad.addColorStop(1, 'transparent')
       ctx.fillStyle = grad
       ctx.fillRect(0, scanY - 6, w, 12)
 
       // Grid overlay
-      ctx.strokeStyle = 'rgba(167, 139, 250, 0.05)'
+      ctx.strokeStyle = 'rgba(20, 184, 166, 0.05)'
       ctx.lineWidth = 0.5
       for (let x = 0; x < w; x += 20) {
         ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke()
@@ -55,7 +55,7 @@ function CameraFeed({ camera }: { camera: SecurityCameraType }) {
 
       // Corner brackets
       const bs = 10
-      ctx.strokeStyle = 'rgba(167, 139, 250, 0.4)'
+      ctx.strokeStyle = 'rgba(20, 184, 166, 0.4)'
       ctx.lineWidth = 1.5
       ;[[4, 4], [w - 4, 4], [4, h - 4], [w - 4, h - 4]].forEach(([cx, cy]) => {
         const sx = cx === 4 ? 1 : -1
@@ -82,7 +82,7 @@ function CameraFeed({ camera }: { camera: SecurityCameraType }) {
   return (
     <div
       className="rounded-xl overflow-hidden relative"
-      style={{ backgroundColor: '#05070A', border: '1px solid #1E293B', aspectRatio: '16/10' }}
+      style={{ backgroundColor: '#0F172A', border: '1px solid #334155', aspectRatio: '16/10' }}
     >
       {camera.online ? (
         <canvas
