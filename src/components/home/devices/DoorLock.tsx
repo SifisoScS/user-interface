@@ -48,6 +48,7 @@ export function DoorLockPanel({ locks, onChange }: Props) {
 
           <button
             onClick={() => toggle(lock)}
+            aria-label={`${lock.locked ? 'Unlock' : 'Lock'} ${lock.name}`}
             className="px-3 py-1.5 rounded-xl text-xs font-medium transition-all shrink-0"
             style={{
               backgroundColor: lock.locked ? '#F59E0B15' : '#14B8A615',

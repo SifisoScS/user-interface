@@ -1,10 +1,13 @@
 import { Index } from './pages/Index'
 import { ModeProvider } from './context/ModeContext'
+import { ErrorBoundary } from './components/ErrorBoundary'
 
 export default function App() {
   return (
-    <ModeProvider>
-      <Index />
-    </ModeProvider>
+    <ErrorBoundary>
+      <ModeProvider>
+        <Index />
+      </ModeProvider>
+    </ErrorBoundary>
   )
 }

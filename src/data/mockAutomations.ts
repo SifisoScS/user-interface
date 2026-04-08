@@ -1,3 +1,5 @@
+import { USER_CONFIG } from '../config/user'
+
 export interface AutomationRule {
   id: string
   enabled: boolean
@@ -53,7 +55,7 @@ export const mockAutomations: AutomationRule[] = [
   {
     id: 'a7', enabled: true, group: 'Safety',
     trigger: 'If oven is on for more than 60 minutes',
-    action:  'Send reminder notification to Sifiso',
+    action:  `Send reminder notification to ${USER_CONFIG.name}`,
     icon: '🍳', lastRan: '3 days ago',
   },
   {

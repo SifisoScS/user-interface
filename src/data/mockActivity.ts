@@ -1,3 +1,5 @@
+import { USER_CONFIG } from '../config/user'
+
 export type ActivityType = 'lock' | 'motion' | 'arrival' | 'appliance' | 'scene' | 'alert' | 'message'
 
 export interface ActivityEvent {
@@ -15,7 +17,7 @@ export const mockActivity: ActivityEvent[] = [
   { id: 'ac3',  type: 'appliance', message: 'Laundry finished ✅',               time: '25 mins ago', icon: '🧺', color: '#A78BFA' },
   { id: 'ac4',  type: 'arrival',   message: 'Child 2 arrived home 🏠',          time: '32 mins ago', icon: '🏠', color: '#3B82F6' },
   { id: 'ac5',  type: 'scene',     message: 'Movie Night scene activated',       time: '1 hr ago',    icon: '🎬', color: '#A78BFA' },
-  { id: 'ac6',  type: 'lock',      message: 'Garage unlocked by Sifiso',         time: '1.5 hrs ago', icon: '🔓', color: '#EF4444' },
+  { id: 'ac6',  type: 'lock',      message: `Garage unlocked by ${USER_CONFIG.name}`,         time: '1.5 hrs ago', icon: '🔓', color: '#EF4444' },
   { id: 'ac7',  type: 'arrival',   message: 'Child 1 left for school',           time: '7:50 AM',     icon: '🎒', color: '#F59E0B' },
   { id: 'ac8',  type: 'appliance', message: 'Dishwasher started',                time: '7:30 AM',     icon: '🍽️', color: '#3B82F6' },
   { id: 'ac9',  type: 'scene',     message: 'Morning scene activated',           time: '6:45 AM',     icon: '🌅', color: '#F59E0B' },

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { Wifi, WifiOff, AlertCircle } from 'lucide-react'
+import { Wifi, WifiOff } from 'lucide-react'
 import type { SecurityCamera as SecurityCameraType } from '../../../data/mockIoT'
 
 interface Props {

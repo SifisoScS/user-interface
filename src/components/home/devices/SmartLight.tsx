@@ -37,7 +37,7 @@ export function SmartLightPanel({ lights, onChange }: Props) {
                 {light.watts}W
               </span>
             </div>
-            <ToggleSwitch on={light.on} onChange={on => onChange({ ...light, on })} accent={ACCENT} />
+            <ToggleSwitch on={light.on} onChange={on => onChange({ ...light, on })} accent={ACCENT} label={`Toggle ${light.name}`} />
           </div>
 
           {/* Row 2: brightness + temp (only if on) */}
@@ -82,10 +82,12 @@ export function SmartLightPanel({ lights, onChange }: Props) {
   )
 }
 
-function ToggleSwitch({ on, onChange, accent }: { on: boolean; onChange: (v: boolean) => void; accent: string }) {
+function ToggleSwitch({ on, onChange, accent, label }: { on: boolean; onChange: (v: boolean) => void; accent: string; label?: string }) {
   return (
     <button
       onClick={() => onChange(!on)}
+      aria-label={label ?? (on ? 'Turn off' : 'Turn on')}
+      aria-pressed={on}
       className="relative rounded-full transition-all duration-200"
       style={{
         width: '32px',

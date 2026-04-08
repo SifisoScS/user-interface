@@ -4,14 +4,6 @@ import { useLayout } from '../../hooks/useLayout'
 import { usePanelState } from '../../hooks/usePanelState'
 import type { Mode } from '../../types'
 
-// Dev widgets
-const Terminal = lazy(() => import('../widgets/dev/Terminal').then(m => ({ default: m.Terminal })))
-const CodeEditor = lazy(() => import('../widgets/dev/CodeEditor').then(m => ({ default: m.CodeEditor })))
-const GitStatus = lazy(() => import('../widgets/dev/GitStatus').then(m => ({ default: m.GitStatus })))
-const ApiTester = lazy(() => import('../widgets/dev/ApiTester').then(m => ({ default: m.ApiTester })))
-const DevTasks = lazy(() => import('../widgets/dev/DevTasks').then(m => ({ default: m.DevTasks })))
-const BrowserPreviewDev = lazy(() => import('../widgets/dev/BrowserPreview').then(m => ({ default: m.BrowserPreview })))
-
 // Office widgets
 const EmailInbox = lazy(() => import('../widgets/office/EmailInbox').then(m => ({ default: m.EmailInbox })))
 const TeamChat = lazy(() => import('../widgets/office/TeamChat').then(m => ({ default: m.TeamChat })))

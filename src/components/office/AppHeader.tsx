@@ -1,4 +1,4 @@
-import { Bell, Search, User, ChevronDown } from 'lucide-react'
+import { Bell, Search, ChevronDown } from 'lucide-react'
 import type { AppId } from './AppDock'
 import { APPS } from './AppDock'
 

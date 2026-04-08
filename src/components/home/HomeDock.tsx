@@ -38,6 +38,8 @@ export function HomeDock({ active, onSelect }: Props) {
             <button
               onClick={() => onSelect(tab.id)}
               title={tab.label}
+              aria-label={tab.label}
+              aria-current={isActive ? 'page' : undefined}
               className="w-10 h-10 flex items-center justify-center rounded-xl transition-all"
               style={{
                 backgroundColor: isActive ? `${ACCENT}20` : 'transparent',

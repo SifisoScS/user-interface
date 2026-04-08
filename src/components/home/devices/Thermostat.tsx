@@ -35,6 +35,7 @@ export function ThermostatPanel({ state, onChange }: Props) {
           <div className="flex items-center gap-2">
             <button
               onClick={() => onChange({ ...state, targetTemp: state.targetTemp - 1 })}
+              aria-label="Decrease target temperature"
               className="w-7 h-7 rounded-lg flex items-center justify-center text-lg font-bold transition-colors hover:bg-white/10"
               style={{ color: '#64748B', backgroundColor: '#334155' }}
             >−</button>
@@ -43,6 +44,7 @@ export function ThermostatPanel({ state, onChange }: Props) {
             </span>
             <button
               onClick={() => onChange({ ...state, targetTemp: state.targetTemp + 1 })}
+              aria-label="Increase target temperature"
               className="w-7 h-7 rounded-lg flex items-center justify-center text-lg font-bold transition-colors hover:bg-white/10"
               style={{ color: '#64748B', backgroundColor: '#334155' }}
             >+</button>

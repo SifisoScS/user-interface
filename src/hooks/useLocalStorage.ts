@@ -18,8 +18,8 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
           localStorage.setItem(key, JSON.stringify(next))
           return next
         })
-      } catch {
-        // ignore write errors
+      } catch (e) {
+        console.warn('[useLocalStorage] Write failed for key:', key, e)
       }
     },
     [key]
@@ -29,8 +29,8 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
     try {
       localStorage.removeItem(key)
       setStoredValue(initialValue)
-    } catch {
-      // ignore
+    } catch (e) {
+      console.warn('[useLocalStorage] Clear failed for key:', key, e)
     }
   }, [key, initialValue])
 

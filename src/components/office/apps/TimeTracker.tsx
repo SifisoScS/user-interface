@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Play, Square, Plus, Clock, BarChart2 } from 'lucide-react'
+import { Play, Square, Clock, BarChart2 } from 'lucide-react'
 import { mockTimeLog } from '../../../data'
 import type { TimeEntry } from '../../../data/mockTimeLog'
 
@@ -25,7 +25,7 @@ export function TimeTracker() {
   const [project, setProject]   = useState(PROJECTS[0])
   const [log, setLog]           = useState<TimeEntry[]>(mockTimeLog)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
-  const todayStr = '2026-04-07'
+  const todayStr = new Date().toISOString().slice(0, 10)
 
   useEffect(() => {
     if (running) {

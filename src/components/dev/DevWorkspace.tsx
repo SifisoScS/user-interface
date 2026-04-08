@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { Terminal as TerminalIcon, GitBranch, Zap, AlertTriangle, ChevronDown, ChevronUp, CheckSquare, Search, X, Globe } from 'lucide-react'
 import { RunBar } from './RunBar'
 import { ResizableSplitter } from './ResizableSplitter'
@@ -54,7 +54,6 @@ export function DevWorkspace() {
   // Run state
   const [runStatus, setRunStatus]   = useState<RunStatus>('stopped')
   const [browserOpen, setBrowserOpen] = useState(false)
-  const terminalRef = useRef<{ appendLines?: (lines: { type: string; text: string }[]) => void }>(null)
 
   const handleRun = useCallback(() => {
     setRunStatus('building')

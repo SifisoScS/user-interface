@@ -2,6 +2,7 @@ import { Home, DoorOpen, Settings, Bell, Users } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import type { HomeTabId } from './HomeDock'
 import { AlertsBadge } from './HomeAlerts'
+import { USER_CONFIG } from '../../config/user'
 
 const ACCENT = '#2563EB'
 
@@ -53,9 +54,9 @@ export function HomeHeader({ activeTab, alertCount }: Props) {
         {/* Owner avatar */}
         <div
           className="w-7 h-7 rounded-full flex items-center justify-center font-semibold text-xs"
-          style={{ backgroundColor: `hsl(220, 55%, 30%)`, color: '#fff' }}
+          style={{ backgroundColor: `hsl(${USER_CONFIG.hue}, 55%, 30%)`, color: '#fff' }}
         >
-          SI
+          {USER_CONFIG.initials}
         </div>
       </div>
     </header>

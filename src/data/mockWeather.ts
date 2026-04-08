@@ -1,7 +1,8 @@
 import type { CurrentWeather } from '../types'
+import { USER_CONFIG } from '../config/user'
 
 export const mockWeather: CurrentWeather = {
-  city: 'Johannesburg',
+  city: USER_CONFIG.location,
   temperature: 22,
   feelsLike: 20,
   condition: 'partly-cloudy',

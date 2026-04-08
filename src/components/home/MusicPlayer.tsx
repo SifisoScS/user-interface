@@ -14,6 +14,9 @@ export function MusicPlayer() {
 
   const track = mockPlaylist[trackIdx]
 
+  const prev = () => { setTrackIdx(i => (i - 1 + mockPlaylist.length) % mockPlaylist.length); setProgress(0) }
+  const next = () => { setTrackIdx(i => (i + 1) % mockPlaylist.length); setProgress(0) }
+
   useEffect(() => {
     if (playing) {
       intervalRef.current = setInterval(() => {
@@ -29,9 +32,6 @@ export function MusicPlayer() {
     }
     return () => { if (intervalRef.current) clearInterval(intervalRef.current) }
   }, [playing, track.duration])
-
-  const prev = () => { setTrackIdx(i => (i - 1 + mockPlaylist.length) % mockPlaylist.length); setProgress(0) }
-  const next = () => { setTrackIdx(i => (i + 1) % mockPlaylist.length); setProgress(0) }
 
   const pct = (progress / track.duration) * 100
   const albumBg = `linear-gradient(135deg, hsl(${track.hue}, 60%, 20%), hsl(${track.hue + 40}, 70%, 15%))`
@@ -59,17 +59,19 @@ export function MusicPlayer() {
 
       {/* Controls */}
       <div className="flex items-center gap-2">
-        <button onClick={prev} className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" style={{ color: '#64748B' }}>
+        <button onClick={prev} aria-label="Previous track" className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" style={{ color: '#64748B' }}>
           <SkipBack size={14} />
         </button>
         <button
           onClick={() => setPlaying(p => !p)}
+          aria-label={playing ? 'Pause' : 'Play'}
+          aria-pressed={playing}
           className="w-8 h-8 flex items-center justify-center rounded-full transition-all"
           style={{ backgroundColor: ACCENT, color: '#fff' }}
         >
           {playing ? <Pause size={14} /> : <Play size={14} />}
         </button>
-        <button onClick={next} className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" style={{ color: '#64748B' }}>
+        <button onClick={next} aria-label="Next track" className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" style={{ color: '#64748B' }}>
           <SkipForward size={14} />
         </button>
       </div>

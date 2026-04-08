@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronDown, ChevronUp, Lightbulb, Thermometer, Lock } from 'lucide-react'
+import { ChevronDown, ChevronUp, Lightbulb } from 'lucide-react'
 import { SmartLightPanel } from './devices/SmartLight'
 import type { IoTState, SmartLight } from '../../data/mockIoT'
 

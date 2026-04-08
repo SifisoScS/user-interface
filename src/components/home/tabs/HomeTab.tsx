@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { HomeAlerts } from '../HomeAlerts'
+import { USER_CONFIG } from '../../../config/user'
 import { mockScenes } from '../../../data/mockScenes'
 import { mockActivity } from '../../../data/mockActivity'
 import type { IoTState } from '../../../data/mockIoT'
@@ -19,10 +20,11 @@ interface Props {
 }
 
 function getGreeting(hour: number): { salutation: string; status: string } {
-  if (hour >= 5  && hour < 12) return { salutation: 'Good morning, Sifiso ☀️',  status: 'Everyone is up and about.' }
-  if (hour >= 12 && hour < 18) return { salutation: 'Good afternoon, Sifiso 👋', status: 'Everything looks good at home.' }
-  if (hour >= 18 && hour < 22) return { salutation: 'Good evening, Sifiso 🌆',   status: 'Everyone is home and safe.' }
-  return { salutation: 'Good night, Sifiso 🌙', status: 'Home is secure and quiet.' }
+  const n = USER_CONFIG.name
+  if (hour >= 5  && hour < 12) return { salutation: `Good morning, ${n} ☀️`,  status: 'Everyone is up and about.' }
+  if (hour >= 12 && hour < 18) return { salutation: `Good afternoon, ${n} 👋`, status: 'Everything looks good at home.' }
+  if (hour >= 18 && hour < 22) return { salutation: `Good evening, ${n} 🌆`,   status: 'Everyone is home and safe.' }
+  return { salutation: `Good night, ${n} 🌙`, status: 'Home is secure and quiet.' }
 }
 
 const SCENE_BUTTONS = [

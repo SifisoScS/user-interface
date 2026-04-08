@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Zap, TrendingDown, TrendingUp } from 'lucide-react'
+import { Zap, TrendingDown } from 'lucide-react'
 
 const ACCENT = '#14B8A6'
 

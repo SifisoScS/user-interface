@@ -3,8 +3,6 @@ import { Bell, X, AlertTriangle, Thermometer, BatteryLow, Lock } from 'lucide-re
 import { defaultAlerts } from '../../data'
 import type { HomeAlert, AlertType } from '../../data/mockAlerts'
 
-const ACCENT = '#A78BFA'
-
 const ALERT_ICONS: Record<AlertType, React.ReactNode> = {
   motion:  <AlertTriangle size={12} style={{ color: '#F59E0B' }} />,
   climate: <Thermometer  size={12} style={{ color: '#14B8A6' }} />,

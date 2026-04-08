@@ -9,8 +9,6 @@ import type { IoTState, SmartLight, ThermostatState, DoorLock } from '../../../d
 
 const FAMILY_ROOMS = ['Living Room', 'Kitchen', 'Main Bedroom', 'Kids Room', 'Bathroom', 'Outside']
 
-const ACCENT = '#A78BFA'
-
 interface Props {
   iotState: IoTState
   onLightChange: (l: SmartLight) => void

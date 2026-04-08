@@ -82,15 +82,17 @@ function AutomationRuleCard({ rule, onToggle }: { rule: AutomationRule; onToggle
       </div>
 
       {/* Toggle */}
-      <ToggleSwitch on={rule.enabled} onChange={() => onToggle(rule.id)} />
+      <ToggleSwitch on={rule.enabled} onChange={() => onToggle(rule.id)} label={`${rule.enabled ? 'Disable' : 'Enable'}: ${rule.trigger}`} />
     </div>
   )
 }
 
-function ToggleSwitch({ on, onChange }: { on: boolean; onChange: () => void }) {
+function ToggleSwitch({ on, onChange, label }: { on: boolean; onChange: () => void; label?: string }) {
   return (
     <button
       onClick={onChange}
+      aria-label={label ?? (on ? 'Disable automation' : 'Enable automation')}
+      aria-pressed={on}
       className="relative rounded-full transition-all duration-200 shrink-0"
       style={{
         width: '36px',
